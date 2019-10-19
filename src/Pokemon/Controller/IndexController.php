@@ -1,17 +1,18 @@
 <?php
 
-namespace App\Devices\Controller;
+namespace App\Pokemon\Controller;
 
 use Silex\Application;
 use Symfony\Component\HttpFoundation\Request;
-use App\Users\Repository\UserRepository;
+use App\Pokemon\Repository\PokemonRepository;
 
 class IndexController
 {
     public function listAction(Request $request, Application $app)
     {
-        $devices = $app['repository.device']->getAll();
-
+        //$devices = $app['repository.device']->getAll();
+        //return $app['twig']->render('device.list.html.twig', array('device' => $devices));
+        
         $req = new \HttpRequest("https://pokeapi.co/api/v2/pokedex/1", \HttpRequest::METH_GET);
         $res = $req->send();
 
@@ -20,7 +21,6 @@ class IndexController
         } else {
             return $res;
         }
-        //return $app['twig']->render('device.list.html.twig', array('device' => $devices));
     }
 
     public function deleteAction(Request $request, Application $app)

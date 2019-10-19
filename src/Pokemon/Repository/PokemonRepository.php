@@ -1,15 +1,14 @@
 <?php
 
-namespace App\pokemons\Repository;
+namespace App\Pokemon\Repository;
 
-use App\pokemons\Entity\pokemon;
+use App\Pokemon\Entity\Pokemon;
 use Doctrine\DBAL\Connection;
 use App\Users\Repository\UserRepository;
-
 /**
  * pokemon repository.
  */
-class pokemonRepository
+class PokemonRepository
 {
     /**
      * @var \Doctrine\DBAL\Connection

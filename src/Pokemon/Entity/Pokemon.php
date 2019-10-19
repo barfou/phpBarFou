@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Devices\Entity;
+namespace App\Pokemon\Entity;
 
-class Device
+class Pokemon
 {
     protected $id;
 
