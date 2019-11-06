@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Pokemons\Repository;
+namespace App\Repository;
 
 use App\Pokemon\Entity\Pokemon;
 use Doctrine\DBAL\Connection;

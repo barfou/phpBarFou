@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Pokemons\Entity;
+namespace App\Entity;
 
 class Pokemon
 {

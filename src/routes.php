@@ -1,11 +1,7 @@
 <?php
 
-$app->get('/users/list', 'App\Users\Controller\IndexController::listAction')->bind('users.list');
-$app->get('/users/edit/{id}', 'App\Users\Controller\IndexController::editAction')->bind('users.edit');
-$app->get('/users/new', 'App\Users\Controller\IndexController::newAction')->bind('users.new');
-$app->post('/users/delete/{id}', 'App\Users\Controller\IndexController::deleteAction')->bind('users.delete');
-$app->post('/users/save', 'App\Users\Controller\IndexController::saveAction')->bind('users.save');
-
-$app->get('/pokemons/list', 'App\Pokemons\Controller\IndexController::listAction')->bind('pokemon.list');
-
-$app->get('/pokemons2/list', 'App\Users\Controller\IndexController::listAction')->bind('pokemon.list');
+$app->get('/pokemons/list', 'App\Controller\IndexController::listAction')->bind('pokemons.list');
+$app->get('/pokemons/edit/{id}', 'App\Controller\IndexController::editAction')->bind('pokemons.edit');
+$app->get('/pokemons/new', 'App\Controller\IndexController::newAction')->bind('pokemons.new');
+$app->post('/pokemons/delete/{id}', 'App\Controller\IndexController::deleteAction')->bind('v.delete');
+$app->post('/pokemons/save', 'App\Controller\IndexController::saveAction')->bind('pokemons.save');

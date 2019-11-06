@@ -1,21 +1,25 @@
 <?php
 
-namespace App\Devices\Controller;
+namespace App\Controller;
 
 use Silex\Application;
 use Symfony\Component\HttpFoundation\Request;
-use App\Users\Repository\UserRepository;
 
 class IndexController
 {
     public function listAction(Request $request, Application $app)
     {
-        $devices = $app['repository.device']->getAll();
+        $req = new HttpRequest("https://pokeapi.co/api/v2/pokedex/1", HttpRequest::METH_GET);
+        $res = $req->send();
 
-        return $app['twig']->render('device.list.html.twig', array('device' => $devices));
+        if ($res->getResponseCode() == 200) {
+            return $res->getResponseBody();
+        } else {
+            return $res;
+        }
     }
 
-    public function deleteAction(Request $request, Application $app)
+    /*public function deleteAction(Request $request, Application $app)
     {
         $parameters = $request->attributes->all();
         $app['repository.device']->delete($parameters['id']);
@@ -48,5 +52,5 @@ class IndexController
         $users = $app['repository.user']->getAll();
 
         return $app['twig']->render('device.form.html.twig', array('users' => $users));
-    }
+    }*/
 }
