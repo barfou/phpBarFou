@@ -9,7 +9,7 @@ class IndexController
 {
     public function listAction(Request $request, Application $app)
     {
-        $req = new \HttpRequest("https://pokeapi.co/api/v2/pokedex/1", \HttpRequest::METH_GET);
+        $req = new HttpRequest("https://pokeapi.co/api/v2/pokedex/1", HttpRequest::METH_GET);
         $res = $req->send();
 
         if ($res->getResponseCode() == 200) {

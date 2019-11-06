@@ -12,7 +12,7 @@ class IndexController
         //$devices = $app['repository.device']->getAll();
         //return $app['twig']->render('device.list.html.twig', array('device' => $devices));
         
-        $req = new \HttpRequest("https://pokeapi.co/api/v2/pokedex/1", \HttpRequest::METH_GET);
+        $req = new HttpRequest("https://pokeapi.co/api/v2/pokedex/1", HttpRequest::METH_GET);
         $res = $req->send();
 
         if ($res->getResponseCode() == 200) {
