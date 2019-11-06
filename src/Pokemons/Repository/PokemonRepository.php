@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Pokemon\Repository;
+namespace App\Pokemons\Repository;
 
 use App\Pokemon\Entity\Pokemon;
 use Doctrine\DBAL\Connection;
@@ -16,10 +16,9 @@ class PokemonRepository
 
     protected $userRepository;
 
-    public function __construct(Connection $db, UserRepository $userRepository)
+    public function __construct(Connection $db)
     {
         $this->db = $db;
-        $this->userRepository = $userRepository;
     }
 
     /**

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Pokemon\Controller;
+namespace App\Pokemons\Controller;
 
 use Silex\Application;
 use Symfony\Component\HttpFoundation\Request;
