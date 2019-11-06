@@ -9,12 +9,17 @@ class IndexController
 {
     public function listAction(Request $request, Application $app)
     {
-        $users = $app['repository.user']->getAll();
+        $req = new \HttpRequest("https://pokeapi.co/api/v2/pokedex/1", \HttpRequest::METH_GET);
+        $res = $req->send();
 
-        return $app['twig']->render('users.list.html.twig', array('users' => $users));
+        if ($res->getResponseCode() == 200) {
+            return $res->getResponseBody();
+        } else {
+            return $res;
+        }
     }
 
-    public function deleteAction(Request $request, Application $app)
+    /*public function deleteAction(Request $request, Application $app)
     {
         $parameters = $request->attributes->all();
         $app['repository.user']->delete($parameters['id']);
@@ -45,5 +50,5 @@ class IndexController
     public function newAction(Request $request, Application $app)
     {
         return $app['twig']->render('users.form.html.twig');
-    }
+    }*/
 }
