@@ -4,7 +4,6 @@ namespace App\Pokemon\Repository;
 
 use App\Pokemon\Entity\Pokemon;
 use Doctrine\DBAL\Connection;
-use App\Users\Repository\UserRepository;
 /**
  * pokemon repository.
  */

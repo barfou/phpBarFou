@@ -4,7 +4,6 @@ namespace App\Pokemon\Controller;
 
 use Silex\Application;
 use Symfony\Component\HttpFoundation\Request;
-use App\Pokemon\Repository\PokemonRepository;
 
 class IndexController
 {
@@ -23,7 +22,7 @@ class IndexController
         }
     }
 
-    public function deleteAction(Request $request, Application $app)
+    /*public function deleteAction(Request $request, Application $app)
     {
         $parameters = $request->attributes->all();
         $app['repository.device']->delete($parameters['id']);
@@ -56,5 +55,5 @@ class IndexController
         $users = $app['repository.user']->getAll();
 
         return $app['twig']->render('device.form.html.twig', array('users' => $users));
-    }
+    }*/
 }
